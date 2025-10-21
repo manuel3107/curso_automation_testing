@@ -12,6 +12,11 @@ El proyecto implementa buenas prácticas de automatización:
 - Tests independientes.  
 - Organización modular (helpers y tests).  
 - Reporte HTML de Pytest.  
-- Capturas automáticas en fallos.  
+- Capturas automáticas en fallos. 
+
+
+**Para instlar las dependecias utliza el siguiente comando:** "pip install -r requirements.txt"
+**Para ejecutar todos los test utliza el siguiente comando:** "pytest -v --html=reporte.html"
+
 
 
