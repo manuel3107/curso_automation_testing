@@ -8,7 +8,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 @pytest.fixture
 def driver():
     chrome_options = Options()
-    chrome_options.add_argument("--headless=new")
+    #chrome_options.add_argument("--headless=new") "Decomentar si se quiere ejecutar las pruebas en modo headless"
     chrome_options.add_argument("--window-size=1200,900")
 
     service = ChromeService(ChromeDriverManager().install())
