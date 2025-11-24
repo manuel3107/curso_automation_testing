@@ -31,7 +31,7 @@ class InventoryPage:
     
     def obtener_contador_carrito(self):
         try:
-            badge: self.driver.find_element(*self._CART_BADGE)
+            badge = self.driver.find_element(*self._CART_BADGE)
             return int(badge.text)
         except:
             return 0
