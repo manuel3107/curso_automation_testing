@@ -1,18 +1,14 @@
 import pytest
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service as ChromeService
-from selenium.webdriver.chrome.options import Options
-from webdriver_manager.chrome import ChromeDriverManager
-
+from pages.login_page import LoginPage
 
 @pytest.fixture
 def driver():
-    chrome_options = Options()
-    #chrome_options.add_argument("--headless=new") "Decomentar si se quiere ejecutar las pruebas en modo headless"
-    chrome_options.add_argument("--window-size=1200,900")
-
-    service = ChromeService(ChromeDriverManager().install())
-    driver = webdriver.Chrome(service=service, options=chrome_options)
-    driver.implicitly_wait(5)
+    driver = webdriver.Chrome()
     yield driver
     driver.quit()
+
+@pytest.fixture
+def login_in_driver(driver,usuario,password):
+    LoginPage(driver).abrir_pagina().login_completo(usuario,password)
+    return driver
